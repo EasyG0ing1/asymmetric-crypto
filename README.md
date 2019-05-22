@@ -27,7 +27,7 @@ This library lets you boil the code down to about 4 lines on the client and 2 li
 
 Local:
 
-    final RandomSymmetricCipher cipher = new RandomSymmetricCipher();
+    final AsymmetricCipher cipher = new AsymmetricCipher();
  
     // Generate a random symmetric key, use it to encrypt the data,  encrypt the random key using the private key 
     // and return a CryptoPacket containing the encrypted data and the encrypted random key.
