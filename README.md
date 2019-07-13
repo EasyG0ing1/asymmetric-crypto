@@ -1,6 +1,8 @@
 random-symmetric-crypto
 =======================
 
+Code examples below are the correct usage of the Class, the root project was incorrect so I forked it and corrected it.
+
 Provides a very simple library that uses public key crypto
 to encrypt any size data using a randomly generated symmetric key.
 
