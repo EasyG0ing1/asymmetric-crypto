@@ -33,17 +33,21 @@ Local:
  
     // Generate a random symmetric key, use it to encrypt the data,  encrypt the random key using the private key 
     // and return a CryptoPacket containing the encrypted data and the encrypted random key.
+    
     final CryptoPacket cryptoPacket = cipher.encrypt(inputData, PUBLIC_KEY_BASE64);
+   
  
     // Convert the CryptoPacket into a Base64 String that can be readily reconstituted at the other end.
+    
     final CryptoPacketConverter cryptoPacketConverter = new CryptoPacketConverter();
     final String base64EncryptedData = cryptoPacketConverter.convert(cryptoPacket);
 
 
 Remote:
 
-    final RandomSymmetricCipher cipher = new RandomSymmetricCipher();
+    final AsymmetricCipher cipher = new AsymmetricCipher();
 
     // Convert the Base64 encoded String into a CryptoPacket, decode the random-symmetric key using the public key,
     // decode the data using the random-symmetric key and return the decoded data.
+    
     final byte[] outputData = cipher.decrypt(base64EncryptedData, PRIVATE_KEY_BASE64);
